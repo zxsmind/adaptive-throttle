@@ -1,0 +1,64 @@
+{
+  "name": "adaptive-throttle",
+  "version": "1.0.0",
+  "description": "Provider-agnostic quota accounting, routing advice, cooldowns, and request pacing.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zxsmind/adaptive-throttle.git"
+  },
+  "homepage": "https://github.com/zxsmind/adaptive-throttle#readme",
+  "bugs": {
+    "url": "https://github.com/zxsmind/adaptive-throttle/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "rate-limit",
+    "throttling",
+    "quota",
+    "adaptive",
+    "request-pacing"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./identity": {
+      "types": "./dist/identity.d.ts",
+      "import": "./dist/identity.js",
+      "default": "./dist/identity.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/types.js",
+      "default": "./dist/types.js"
+    }
+  },
+  "scripts": {
+    "build": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\" && tsc -p tsconfig.json",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run test:portable",
+    "lint": "tsc --noEmit -p tsconfig.json",
+    "test": "node --import tsx --test src/*.test.ts",
+    "test:fast": "node --import tsx --test src/index.test.ts src/hypotheses.test.ts",
+    "test:load": "node --import tsx --test src/sweep.test.ts",
+    "test:portable": "npm run lint && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}

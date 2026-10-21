@@ -1,0 +1,33 @@
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Scratch artifacts from investigation runs
+testout.txt
+
+# Secrets, defensively: this library is about credentials and none belong in a
+# commit even by accident.
+.env
+.env.*
+*.pem
+*.key
+credentials*.json
+
+.test-build/
+bench/results/ablation-smoke.*
+
+# Live-adapter run artifacts: ground truth, snapshots, the stop file.
+examples/live-ground-truth.jsonl
+examples/live-engine.json
+examples/live-stop
+
+examples/live-run-*.log
+
+# Keep the local project brief out of commits and GitHub pushes.
+/PROJECT-BRIEFING.md
+/.env.example
+/bench/
+/examples/
+/scripts/
+/tsconfig.bench.json
+/.github/workflows/ablation-40-seed.yml
