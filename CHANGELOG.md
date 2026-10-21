@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 — 2026-10-21
+
+Added the MIT license file and package metadata.
+
 ## 1.0.0 — 2026-10-21
 
 ### Added: per-resource request pacing

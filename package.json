@@ -1,12 +1,13 @@
 {
   "name": "adaptive-throttle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provider-agnostic quota accounting, routing advice, cooldowns, and request pacing.",
   "repository": {
     "type": "git",
     "url": "https://github.com/zxsmind/adaptive-throttle.git"
   },
   "homepage": "https://github.com/zxsmind/adaptive-throttle#readme",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/zxsmind/adaptive-throttle/issues"
   },
@@ -17,7 +18,8 @@
   "files": [
     "dist",
     "README.md",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "LICENSE"
   ],
   "engines": {
     "node": ">=18"
